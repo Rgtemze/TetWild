@@ -129,9 +129,7 @@ void DelaunayTetrahedralization::tetra(const std::vector<Point_3>& m_vertices, G
         dis = g_diag_l / 20;
     else
         dis = g_eps * 1.1;
-
-	
-	p_min = Point_3(p_min[0] - dis, p_min[1] - dis, p_min[2] - dis);
+    p_min = Point_3(p_min[0] - dis, p_min[1] - dis, p_min[2] - dis);
     p_max = Point_3(p_max[0] + dis, p_max[1] + dis, p_max[2] + dis);
 
     for (int i = 0; i < 8; i++) {

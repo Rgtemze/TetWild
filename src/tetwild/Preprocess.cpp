@@ -240,7 +240,7 @@ void Preprocess::process(GEO::Mesh& geo_sf_mesh, std::vector<Point_3>& m_vertice
     //simplification
     ts = 0;
     f_tss.resize(F_in.size());
-    //simplify(geo_sf_mesh, geo_face_tree);
+    simplify(geo_sf_mesh, geo_face_tree);
 
     ////get CGAL surface mesh
     int cnt = 0;
@@ -277,7 +277,7 @@ void Preprocess::process(GEO::Mesh& geo_sf_mesh, std::vector<Point_3>& m_vertice
         for (int j = 0; j < 3; j++)
             conn_fs[F_in(i, j)].insert(i);
     }
-    //swap(geo_sf_mesh, geo_face_tree);
+    swap(geo_sf_mesh, geo_face_tree);
     if(args.save_mid_result == 0)
         igl::writeSTL(state.working_dir+state.postfix+"_simplified.stl", V_in, F_in);
 

@@ -696,11 +696,9 @@ void tetrahedralization(const Eigen::MatrixXd &VI, const Eigen::MatrixXi &FI,
     tetwild_stage_one(VI, FI, args, state, geo_sf_mesh, geo_b_mesh,
         tet_vertices, tet_indices, is_surface_facet);
 
-
     /// STAGE 2
     tetwild_stage_two(args, state, geo_sf_mesh, geo_b_mesh,
         tet_vertices, tet_indices, is_surface_facet, VO, TO, AO);
-
 
     double total_time = igl_timer.getElapsedTime();
     logger().info("Total time for all stages = {}s", total_time);
